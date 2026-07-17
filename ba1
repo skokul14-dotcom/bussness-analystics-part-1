@@ -1,0 +1,70 @@
+ import pandas as pd
+
+# Create the dataset
+data = {
+    "Price": [20, 25, 30, 35, 40],
+    "Bottles Sold": [120, 110, 90, 80, 70]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Display the dataset
+print("Original Dataset:")
+print(df)
+[12:17 pm, 17/07/2026] Shweatha: press shift+enter
+[12:17 pm, 17/07/2026] Shweatha: # Create Revenue column
+df["Revenue"] = df["Price"] * df["Bottles Sold"]
+
+# Display updated dataset
+print("Updated Dataset:")
+print(df)
+[12:17 pm, 17/07/2026] Shweatha: press shift+enter
+[12:17 pm, 17/07/2026] Shweatha: # Find the highest revenue
+highest_revenue = df["Revenue"].max()
+
+# Find the price that generated the highest revenue
+best_price = df.loc[df["Revenue"].idxmax(), "Price"]
+
+# Display the results
+print("Highest Revenue: ₹", highest_revenue)
+print("Price that generated the highest revenue: ₹", best_price)
+[12:18 pm, 17/07/2026] Shweatha: shift+enter
+[12:18 pm, 17/07/2026] Shweatha: import matplotlib.pyplot as plt
+
+# Create bar chart
+plt.figure(figsize=(6,4))
+plt.bar(df["Price"].astype(str), df["Revenue"])
+
+# Add title and labels
+plt.title("Price vs Revenue")
+plt.xlabel("Price (₹)")
+plt.ylabel("Revenue (₹)")
+
+# Display the chart
+plt.show()
+[12:19 pm, 17/07/2026] Shweatha: in github [readme la] paste this                                                                                                                                                                            # 📊 Week 1 Sales Revenue Analysis
+
+## Objective
+Analyze sales data using Pandas and Matplotlib to determine the best selling price based on revenue.
+
+---
+
+## Problem Statement
+A juice shop owner tested different selling prices for a fruit juice and recorded the number of bottles sold each day. The objective is to calculate the revenue for each price and identify the price that generates the highest revenue.
+
+---
+
+## Dataset
+
+| Price (₹) | Bottles Sold |
+|-----------|-------------:|
+| 20 | 120 |
+| 25 | 110 |
+| 30 | 90 |
+| 35 | 80 |
+| 40 | 70 |
+
+---
+
+
